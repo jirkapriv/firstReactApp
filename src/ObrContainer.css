@@ -1,0 +1,23 @@
+
+.obrazek {
+    background: #666 url("../public/header.jpg") center center no-repeat;
+    background-size: cover;
+    display: block;
+    width: 100%;
+    height: 150px;
+    image-rendering: -webkit-optimize-contrast; /* <- BEZ TOHOTO ŠPATNĚ FUNGUJE RENDEROVÁNÍ OBRÁZKU NA EDGE PROHLÍŽEČI  zdroj: spsmb.cz*/
+    z-index: -1;
+    transition: 0.5s ease;
+  }
+  
+  .obr_container {
+    overflow: hidden;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+      rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  }
+  
+  .obr_container:hover .obrazek {
+    transform: scale(1.2);
+    filter: brightness(30%);
+  }

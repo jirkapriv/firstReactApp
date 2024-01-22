@@ -1,0 +1,560 @@
+/*fonty*/
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300&display=swap");
+
+/*fonty*/
+
+/* OBECNE */
+
+* {
+  box-sizing: border-box;
+  font-family: "Source Sans 3", sans-serif;
+  margin: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* OBECNE */
+
+/* OBRAZEK MAIN */
+
+.obrazek {
+  background: #666 url("img/header.jpg") center center no-repeat;
+  background-size: cover;
+  display: block;
+  width: 100%;
+  height: 150px;
+  image-rendering: -webkit-optimize-contrast; /* <- BEZ TOHOTO ŠPATNĚ FUNGUJE RENDEROVÁNÍ OBRÁZKU NA EDGE PROHLÍŽEČI  zdroj: spsmb.cz*/
+  z-index: -1;
+  transition: 0.5s ease;
+}
+
+.obr_container {
+  overflow: hidden;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.obr_container:hover .obrazek {
+  transform: scale(1.2);
+  filter: brightness(30%);
+}
+
+/* OBRAZEK MAIN */
+
+/* MENU */
+
+.navigace {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: whitesmoke;
+  padding: 10px;
+  width: 100%;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.navigace a {
+  text-decoration: none;
+  color: black;
+}
+
+.logo {
+  margin-right: 50px;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+#toggler,
+.navigace label {
+  display: none;
+}
+
+.obr_logo {
+  width: 50px;
+}
+
+.telefon,
+.domecek,
+.aktuality,
+.informace,
+.panacek {
+  display: none;
+}
+
+/* MENU */
+
+/* VPLUTÍ TEXTU NA OBRÁZKU */
+
+.obr_container {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.obr_container:hover .stred {
+  opacity: 1;
+}
+
+.stred {
+  transition: 1s ease-in-out;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-weight: bold;
+  font-size: 120%;
+}
+
+.text_vpluti {
+  color: white;
+  font-size: 20px;
+  padding: 16px 32px;
+  transition: font-size 2s;
+}
+
+.obr_container:hover .text_vpluti {
+  font-size: 30px;
+  padding: 25px 45px;
+}
+
+/* VPLUTÍ TEXTU NA OBRÁZKU */
+
+/* MAPA */
+
+.mapa {
+  width: 100%;
+  height: 300px;
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+}
+.map {
+  width: 100%;
+  height: 300px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+
+/* MAPA */
+
+/* FORMÁTOVÁNÍ TEXTU */
+
+.inf_vtext {
+  color: grey;
+}
+
+.obory {
+  color: blue;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.naobory {
+  font-size: 90%;
+}
+
+.container_text {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.txt_aktuality_jedna,
+.txt_aktuality_dva,
+.txt_aktuality_tri {
+  width: 75%;
+  margin: auto;
+  padding: 2em;
+  transition: 0.6s;
+}
+
+.txt_aktuality_jedna:hover {
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+.txt_aktuality_dva:hover {
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+.txt_aktuality_tri:hover {
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+h2 {
+  text-align: center;
+  left: 0;
+  right: 0;
+}
+
+h3 {
+  text-align: center;
+  font-size: 220%;
+  font-weight: bolder;
+  padding: 20px;
+  margin: 20px;
+}
+
+h4 {
+  text-align: center;
+  font-size: 120%;
+  font-weight: bolder;
+  padding: 20px;
+}
+
+/* FORMÁTOVÁNÍ TEXTU */
+
+/* VYMENA TEXTU */
+
+.text-p {
+  display: none;
+}
+
+/* VYMENA TEXTU */
+
+/* FOTOGALERIE */
+
+.fotogal-scroller {
+  display: grid;
+  gap: 1rem;
+  grid-auto-flow: column;
+  grid-auto-columns: 21%;
+  padding: 25px;
+  overflow-x: auto;
+}
+
+.fotogal-dite {
+  display: grid;
+  gap: 17px;
+  padding: 10px;
+  background-color: gray;
+  border-radius: 5px;
+  color: white;
+  font-size: 100%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+.fotogal-dite > a > img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* FOTOGALERIE */
+
+/* ANIMACE MENU NADTRHNUTÍ */
+
+.nadtrh {
+  position: relative;
+}
+
+.nadtrh::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #18272f;
+  top: -5px;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nadtrh:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+/* ANIMACE MENU NADTRHNUTÍ */
+
+/* SPONZOŘI */
+
+.sponz {
+  width: 100%;
+  height: 500px;
+  margin-bottom: 2rem;
+}
+.sponz_group {
+  display: flex;
+  flex-direction: column;
+}
+
+.sponz_p1 {
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+  margin: auto;
+}
+
+.sponz_p1 > a > img {
+  padding: 20px;
+}
+
+.ba {
+  max-width: 100px;
+  margin: auto;
+  padding-top: 20px;
+}
+
+.skoda {
+  width: 250px;
+}
+
+/* SPONZOŘI */
+
+/* PATA */
+
+.pata {
+  width: 100%;
+  height: 75px;
+  background-color: grey;
+  color: white;
+  padding-top: 25px;
+  box-shadow: rgb(44, 62, 80) 0px -15px 15px -15px;
+}
+
+/* PATA */
+
+/* KONTAKTY */
+
+.kontakty {
+  display: block;
+  width: 80%;
+  margin: auto;
+  background-color: white;
+  height: auto;
+  padding: 2rem;
+  transition: 0.6s;
+}
+
+.kontakty:hover {
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+/* KONTAKTY */
+
+/* OBORY */
+
+.obory_i {
+  background-color: grey;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  padding: 20px;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+.obory_s {
+  background-color: grey;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  padding: 20px;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+.obory_d {
+  background-color: grey;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  padding: 20px;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+.obory_i > img {
+  width: 40px;
+}
+
+.obory_s > img {
+  width: 40px;
+}
+
+.obory_d > img {
+  width: 40px;
+}
+
+.obory_group {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  flex-direction: column;
+}
+
+.na_obory_j,
+.na_obory_d,
+.na_obory_t {
+  padding: 2rem;
+  transition: 0.6s;
+}
+
+.na_obory_j:hover {
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+.na_obory_d:hover {
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+.na_obory_t:hover {
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 900px) {
+  .obory_group {
+    width: unset;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    justify-content: space-between;
+    text-align: justify;
+  }
+}
+
+/* OBORY */
+
+/* RESPONZIVITA */
+
+@media screen and (max-width: 600px) {
+  .menu {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navigace label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  #toggler:checked ~ .menu {
+    max-height: 100%;
+  }
+
+  .pad {
+    padding-top: 10px;
+  }
+
+  .pad_d {
+    padding-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .telefon {
+    display: unset;
+  }
+
+  .domecek {
+    display: unset;
+  }
+
+  .aktuality {
+    display: unset;
+  }
+
+  .informace {
+    display: unset;
+  }
+
+  .panacek {
+    display: unset;
+  }
+
+  ul {
+    margin-right: 50px;
+  }
+
+  .list {
+    gap: 30px;
+  }
+}
+
+@media only screen and (min-width: 920px) {
+  .text-j {
+    display: none;
+  }
+
+  .text-p {
+    display: unset;
+  }
+
+  .obrazek {
+    height: 300px;
+  }
+
+  .txt_aktuality_jedna,
+  .txt_aktuality_dva {
+    width: 40%;
+    margin: unset;
+  }
+
+  .txt_aktuality_jedna {
+    margin-left: 10%;
+  }
+
+  .txt_aktuality_tri {
+    margin: auto;
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  .fotogal-scroller {
+    grid-auto-columns: 42%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  ul {
+    margin-right: 150px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .sponz_p1 {
+    flex-direction: row;
+    margin-left: calc(50% - 625px);
+  }
+
+  .sponz {
+    height: 200px;
+  }
+}
+
+/* RESPONZIVITA */
